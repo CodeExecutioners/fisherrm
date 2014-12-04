@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Rarcana by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Goggin Ballroom Dancing</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			
+		</noscript>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<!--CKEDITOR-->
+		<!--<script src="../ckeditor.js"></script>-->
+		<script src="http://cdn.ckeditor.com/4.4.5/standard-all/ckeditor.js"></script>
+		<!--Script for the tabs-->
+		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		
+		<!--Script for datatables-->
+		<script src="js/admin/lessons.js"></script>
+		<script src="js/admin/resources.js"></script>
+		<!--<script src="js/admin/ckeditorFunctions.js"</script>-->
+		
+		
+		<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+		<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+		<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+		
+		<script type="text/javascript">
+		function proceed(){
+				if(confirm("Do you want to proceed with the submission?")==false){
+					return false;
+				}
+			}
+		
+			$(document).ready(function(){ 
+				$("input[name=inputSubject]").change(function() {
+        			$("#shoeOptions").hide();
+        			
+    			}); 
+    			$("input[id=shoes]").change(function() {
+        			$("#shoeOptions").show();
+    			}); 
+
+			});
+		</script>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+						
+				<!-- Logo -->
+					<h1><a href="/" id="logo">Goggin Ballroom Dancing <em>Ballroom, Latin, & Swing Lessons
+
+</em></a></h1>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="/">Home</a></li>
+							<li><a href="contact">About Us/Contact</a></li>
+							<li><a href="resources">Resources</a></li>
+							<li><a href="lessons">Dance Lessons</a></li>
+							<li><a href="gift">Gift Certificates</a></li>
+							{% if user %}
+							<li><a href="logout">Logout</a></li>
+							{% else %}
+							<li><a href="login">Login</a></li>
+							{% endif %}	
+						</ul>
+					</nav>
+
+			
+			<div class="container" id="bodycontent">
+			  {% block bodycontent %}
+			  {% endblock %}
+			</div>
+			
+
+				<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row ">
+						<div class="6u">
+							<div class="row collapse-at-2">
+								<section class="6u">
+									<h3>Links</h3>
+									<ul class="links">
+										<li><a href="http://www.veryfineshoes.com/">Very Fine Dancesport Shoes</a></li>
+										<li><a >American Classic</a></li>
+
+									</ul>
+								</section>
+								<section class="6u">
+									<h3>Contact</h3>
+									<ul>
+										<li>Dave & Karen Goggin</li>
+										<li>715.833.1879</li>
+										<li>Email@DancinGoggin.com</li>
+									</ul>
+								</section>
+								<!--
+								<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=State%20Theatre%2C%20Eau%20Claire%20Street%2C%20Eau%20Claire%2C%20WI%2C%20United%20States&key=AIzaSyB8ZUks0aVfu4hv1L1qLCbLv7-e2d_7CBM"></iframe>
+								-->
+				
+				
+							</div>
+						</div>
+						<section class="6u">
+							<h3>Get In Touch</h3>
+							<form  action="/contact_mail" method = "post" onsubmit="return proceed()">
+								<div class="row half collapse-at-2">
+									<div class="6u">
+										Subject:<p>
+										<input type="radio" name="inputSubject" id="inputSubject" value="Appointment" required/>Appointment
+										<input type="radio" name="inputSubject" id="shoes" value="Shoes" />Shoes
+											<div id="shoeOptions" style="display: none">
+												Gender
+												<select name="gender">
+												  <option value="M" >M</option>
+												  <option value="F">F</option>
+												</select>
+												Size
+												<select name="size">
+												<select name="size">
+													 <option value="5" >5</option>
+													 <option value="5.5" >5 1/2</option>
+													 <option value="6" >6</option>
+													 <option value="6.5" >6 1/2</option>
+													 <option value="7">7</option>
+													 <option value="7.5" >7 1/2</option>
+													 <option value="8" >8</option>
+													 <option value="8.5" >8 1/2</option>
+													 <option value="9" >9</option>
+													 <option value="9.5">9 1/2</option>
+													 <option value="10">10</option>
+													 <option value="10.5" >10 1/2</option>
+													 <option value="11" >11</option>
+													 <option value="11.5" >11 1/2</option>
+													 <option value="12" >12</option>
+													 <option value="12.5">12 1/2</option>
+													 <option value="13">13</option>
+													 <option value="13.5" >13 1/2</option>
+													 <option value="14" >14</option>
+													 <option value="14.5">14 1/2</option>
+													 <option value="15">15</option>
+
+												</select>
+											</div>
+										<input type="radio" name="inputSubject" id="inputSubject" value="Lessons" />Lessons
+										<input type="radio" name="inputSubject" id="inputSubject" value="Other" />Other
+										<input type="text" name="inputName" id="name" placeholder="Name" required/>
+										<input type="text" name="inputPhone" id="phone" placeholder="Phone" required/>
+										<input type="email" name="inputEmail" id="inputEmail" placeholder="Email" required/>
+										<textarea name="inputMessage" id="inputMessage" placeholder="Message" rows="5" required></textarea>
+										<input type="submit" class="button alt" value="Send Message" />
+								</div>
+								
+									
+								
+							</form>
+						</section>
+					</div>
+				</div>
+
+				
+				
+				
+				<!-- Icons
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+
+				-->	
+					
+					
+					
+					
+					
+				
+
+		</body>
+	</html>
